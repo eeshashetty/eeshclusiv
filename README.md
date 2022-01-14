@@ -19,4 +19,6 @@ runs on `localhost:3000`
 - [x] Set up starter NextJS blogsite
 - [x] Set up Photo Grid for main page
 - [x] Set up Blogposts with Text + Photo Grid
-- [ ] Implement Firebase for database    
+- [ ] Implement Firebase for database
+- [ ] Apply Modals
+- [ ] Refactor Code
