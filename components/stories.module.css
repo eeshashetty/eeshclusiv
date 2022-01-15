@@ -1,0 +1,40 @@
+.bar {
+    height: fit-content;
+    width: 100%;
+    padding: 15px;
+}
+
+.story {
+    display: inline-block;
+    margin: 0px 15px 0px 15px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    text-align: center;
+    border: 5px solid #B4A5A5;
+    border-radius: 9999px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.cover {
+  border-radius: 9999px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+}
+
+
+.story:hover .centered{
+  opacity: 1;
+}
+
+.story:hover .cover{
+  opacity: 0.5;
+}

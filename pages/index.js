@@ -6,17 +6,23 @@ import { Img } from './photos'
 import Link from 'next/link'
 import Date from '../components/date'
 import { getPhotos } from '../lib/photos'
+import { getSortedPostsData } from '../lib/posts'
+import Stories from '../components/stories'
+import PhotoGrid from '../components/photosgrid'
 
 export async function getStaticProps() {
-  const allPhotosData = await getPhotos()
+  const allPhotosData = await getPhotos(process.env.PHOTOS_URL)
+  const allPostsData = await getSortedPostsData()
+
   return {
     props: {
-      allPhotosData
+      allPhotosData,
+      allPostsData
     }
   }
 }
 
-export default function Home({ allPhotosData }) {
+export default function Home({ allPhotosData, allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -27,9 +33,9 @@ export default function Home({ allPhotosData }) {
         <p>I like taking pictures and a good aesthetic.</p>
       </section>
       <br/>
-      <section className={`${utilStyles.row}`}>
-          {allPhotosData.map(({ uid, url, width, height}) => Img(url, height, width, uid))}
-      </section>
+      <Stories allPostsData = {allPostsData}/>
+      <br/>
+      <PhotoGrid allPhotosData = {allPhotosData}/>
       </section>
       
     </Layout>
