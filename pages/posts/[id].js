@@ -1,14 +1,10 @@
-import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import Link from 'next/link'
 import Image from 'next/image'
 import utilStyles from '../../styles/utils.module.css'
-import styles from '../../components/layout.module.css'
 import { getPhotos, getPhotosDataById } from '../../lib/photos'
-import { Img } from '../photos'
-import PhotoGrid from '../../components/photosgrid'
 import SidePhotoGrid from '../../components/sidephotogrid'
 
 export default function Post({ postData, allPhotosData }) {
