@@ -8,7 +8,7 @@ export default function Stories({allPostsData}) {
     return (
         <section className={`${storyStyles.bar}`}>
           {allPostsData.map(({ id, date, title }) => (
-            <Link href={`/posts/${id}`}>
+            <Link href={`/posts/${id}`} key={id}>
             <a className={`${storyStyles.story}`}>
             <Image
                 priority
