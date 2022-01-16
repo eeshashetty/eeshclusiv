@@ -1,9 +1,9 @@
 import Image from "next/image";
 import gridStyle from "./photosgrid.module.css";
 
-export default function PhotoGrid({ allPhotosData }) {
+export default function PhotoGrid({ allPhotosData, side }) {
     return (
-    <div className={`${gridStyle.row}`}>
+    <div className={side ? (`${gridStyle.rowside}`) : (`${gridStyle.row}`)}>
             {allPhotosData.map(({ uid, url, width, height}) => Img(url, height, width, uid))}
     </div>
     )

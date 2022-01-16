@@ -1,11 +1,11 @@
-import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import Link from 'next/link'
 import Image from 'next/image'
+import PhotoGrid from '../../components/photosgrid'
 import utilStyles from '../../styles/utils.module.css'
+import { getAllPostIds, getPostData } from '../../lib/posts'
 import { getPhotos, getPhotosDataById } from '../../lib/photos'
-import SidePhotoGrid from '../../components/sidephotogrid'
 
 export default function Post({ postData, allPhotosData }) {
     return (
@@ -38,7 +38,7 @@ export default function Post({ postData, allPhotosData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </div>
         <div className={utilStyles.content}>
-        <SidePhotoGrid allPhotosData = {allPhotosData}/>
+        <PhotoGrid allPhotosData = {allPhotosData} side/>
         </div>
       </section>
       
